@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour {
 	
     void InitGame()
     {
+        //boardScript.InitBoardTexture(); //not done yet
         boardScript.LayStartingCoins();
     }
 
