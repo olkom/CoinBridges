@@ -14,7 +14,7 @@ public class Coin : MonoBehaviour {
 
     //public Color[] coinColors = { Color.green, Color.red, Color.blue, Color.yellow };
     public bool dragable; //true = drag and drop able
-    public Color topColor;
+    private Color topColor;
     public Color bottomColor;
     public Vector3 position;
 

@@ -177,7 +177,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragable: 0
-  topColor: {r: 0, g: 0, b: 0, a: 0}
   bottomColor: {r: 0, g: 0, b: 0, a: 0}
   position: {x: 0, y: 0, z: 0}
 --- !u!114 &114491652436499446
@@ -191,6 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8414f8fd2435874ebe9dd10a19cb2b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coin: {fileID: 1326650620684892}
 --- !u!136 &136027477174667944
 CapsuleCollider:
   m_ObjectHideFlags: 1
