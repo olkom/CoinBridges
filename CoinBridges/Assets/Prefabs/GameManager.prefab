@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4260850685381284}
   - component: {fileID: 114094741412250884}
   - component: {fileID: 114845741766602238}
+  - component: {fileID: 114151298695851174}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -53,6 +54,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boardScript: {fileID: 0}
+--- !u!114 &114151298695851174
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1528894925493720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 882732cfacf7ebe409dd7520e871d945, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragable: 0
+  isTopCoin: 0
 --- !u!114 &114845741766602238
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66,4 +80,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   columns: 2
   rows: 2
-  coin: {fileID: 0}
+  CoinPrefab: {fileID: 0}
+  startingX: 0
+  startingZ: 0
+  endingX: 0
+  endingZ: 0

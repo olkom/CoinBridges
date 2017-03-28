@@ -5,28 +5,31 @@ using Random = UnityEngine.Random;
 
 public class Coin : MonoBehaviour {
 
-    // use this enum to keep track if the coin is on the board or in hand
-    /*public enum Placement {
-     board,
-     hand 
-     }
-    */
-
-    //public Color[] coinColors = { Color.green, Color.red, Color.blue, Color.yellow };
-    public bool dragable; //true = drag and drop able
     private Color topColor;
-    public Color bottomColor;
-    public Vector3 position;
+    private Color bottomColor;
+    public bool dragable; //true = drag and drop able
+    public bool isTopCoin; //true = the top coin of a stack, means other coins can be dropped on it.
+    private Vector3 position;
 
+    public Transform CoinPrefab;
 
-    public void newCoin(bool _dragable, Vector3 pos)
+    public Coin(Transform coinPF, Color topcolor, Color botcolor, bool drag, bool istopcoin, Vector3 pos)
     {
-        dragable = _dragable;
+        CoinPrefab = coinPF;
+        topColor = topcolor;
+        bottomColor = botcolor;
+        dragable = drag;
+        isTopCoin = istopcoin;
         position = pos;
+        Debug.Log(pos);
+        Transform instance = Instantiate(CoinPrefab, new Vector3(position.x, position.y, position.z), Quaternion.identity);
+
+        //dragable = true;
+
         //topColor = coinColors[Random.Range(0, coinColors.Length)];
         //bottomColor = coinColors[Random.Range(0, coinColors.Length)];
 
     }
-
+    
 	
 }

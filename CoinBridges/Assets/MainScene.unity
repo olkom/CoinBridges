@@ -235,7 +235,15 @@ Prefab:
       propertyPath: endingZ
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114094741412250884, guid: 9fc61e71a1e45c54dbe23158a6161981,
+        type: 2}
+      propertyPath: boardScript
+      value: 
+      objectReference: {fileID: 114834425733376870, guid: 6633a4c0047cfed45a7218eeb8760f43,
+        type: 2}
+    m_RemovedComponents:
+    - {fileID: 114845741766602238, guid: 9fc61e71a1e45c54dbe23158a6161981, type: 2}
+    - {fileID: 114151298695851174, guid: 9fc61e71a1e45c54dbe23158a6161981, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 9fc61e71a1e45c54dbe23158a6161981, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &496296951
@@ -315,7 +323,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 496296951}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2, y: 0, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -408,3 +416,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 105, y: 180, z: 180}
+--- !u!1 &1953082640 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1528894925493720, guid: 9fc61e71a1e45c54dbe23158a6161981,
+    type: 2}
+  m_PrefabInternal: {fileID: 483766415}
+--- !u!114 &1953082643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1953082640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac8278164c9a79c47adc14233d9d9880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  columns: 4
+  rows: 4
+  CoinPrefab: {fileID: 4963043354764052, guid: 22dbf06b4efe56a4baf9afdf804053cb, type: 2}
+  startingX: 1
+  startingZ: 1
+  endingX: 3
+  endingZ: 3
+  placementPosition: {x: 2, y: 2, z: 2}
+  coinColors:
+  - {r: 0, g: 1, b: 0, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 0, g: 0, b: 1, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
