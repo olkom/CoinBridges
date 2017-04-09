@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-    public BoardManager boardScript;
+    //public BoardManager boardScript;
+    public CoinManager coinManager;
 
 	// Use this for initialization
 	void Awake () {
-        boardScript = GetComponent<BoardManager>();
+        coinManager = GetComponent<CoinManager>();
         InitGame();
 	}
 	
     void InitGame()
     {
         //boardScript.InitBoardTexture(); //not done yet
-        boardScript.LayStartingCoins();
+        coinManager.LayStartingCoins();
     }
 
 	// Update is called once per frame

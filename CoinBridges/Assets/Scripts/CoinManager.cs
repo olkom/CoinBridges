@@ -1,46 +1,50 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
-public class BoardManager : MonoBehaviour {
+public class CoinManager : MonoBehaviour {
 
-    public int columns;
-    public int rows;
-    public Transform CoinPrefab;
-    public int startingX;
-    public int startingZ;
-    public int endingX;
-    public int endingZ;
-    public Vector3 placementPosition;
-    private Transform boardHolder;
+    public int columns = 4;
+    public int rows = 4;
+    public int startingX = 0;
+    public int startingZ = 0;
+    public int endingX = 3;
+    public int endingZ = 3;
+
+    //private Vector3 placementPosition;
+    private Transform coinHolder;
     public Color[] coinColors = { Color.green, Color.red, Color.blue, Color.yellow };
+    public Transform CoinPrefab;
+    //public Coin coin;
 
-
+    Color RandomColor()
+    {
+        Color randomColor = coinColors[Random.Range(0, coinColors.Length)];
+        return randomColor;
+    }
 
     void LayoutCoinsOnBoard()
     {
         //setting up a holder for the objects to be instantiated.
-        boardHolder = new GameObject("BoardCoins").transform;
-
+        coinHolder = new GameObject("BoardCoins").transform;
+        
         //looping through the x and z of our board
-        for (int x = 0; x < columns; x++)
+        for (float x = 0; x < columns; x++)
         {
-            for (int z = 0; z < rows; z++)
+            for (float z = 0; z < rows; z++)
             {
                 //randomizing color for the coin about to be placed.
-                int botColorNr = Random.Range(0, coinColors.Length);
-                int topColorNr = Random.Range(0, coinColors.Length);
-                Color botColor = coinColors[botColorNr];
-                Color topColor = coinColors[topColorNr];
+                Color botColor = RandomColor();
+                Color topColor = RandomColor();
+                Vector3 placementPosition = new Vector3(x,0.3f,z);
 
                 //instantiate the coin prefab at the x , z coordinates that we loop through
 
-                //public Coin coin = new Coin(false,true, placementPosition);
-                Transform instance = Instantiate(CoinPrefab, new Vector3(x, 0.3f, z), Quaternion.identity);
+                //Coin coin = new Coin(CoinPrefab, Color.green, Color.red, false, true, placementPosition);
+                Transform coin = Instantiate(CoinPrefab, new Vector3(x, 0.3f, z), Quaternion.identity);
 
                 //accessing the renderers of the child and parent (bottom and top)
-                Renderer[] renderers = instance.GetComponentsInChildren<Renderer>();
+                Renderer[] renderers = coin.GetComponentsInChildren<Renderer>();
 
                 //accessing the bottom renderer by looking at both renderers and 
                 foreach (Renderer renderer in renderers)
@@ -55,16 +59,18 @@ public class BoardManager : MonoBehaviour {
                         }
                         else
                         {
-                            renderer.material.color = coinColors[botColorNr];
+                            renderer.material.color = botColor;
                         }
                     }
                     else //parent renderer -> topColor
                     {
-                        renderer.material.color = coinColors[topColorNr];
+                        renderer.material.color = topColor;
                     }
                 }
                 //putting the new spawned coin under the boardholder parent.
-                instance.transform.SetParent(boardHolder);
+                coin.transform.SetParent(coinHolder);
+                coin.name = "coin " + x + "." + z;
+                coin.GetComponent<DragDropCoin>().enabled = false;
 
             }
         }
@@ -73,7 +79,6 @@ public class BoardManager : MonoBehaviour {
     public void LayStartingCoins()
     {
         LayoutCoinsOnBoard();
-        Coin coin = new Coin(CoinPrefab, Color.green,Color.red,false,true, placementPosition);
+        
     }
-
 }

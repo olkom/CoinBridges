@@ -9,44 +9,43 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1591564457108686}
+  m_RootGameObject: {fileID: 1099175284582654}
   m_IsPrefabParent: 1
---- !u!1 &1591564457108686
+--- !u!1 &1099175284582654
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4926772181291570}
-  - component: {fileID: 114961710036071080}
-  - component: {fileID: 114857260354189918}
+  - component: {fileID: 4300190080106106}
+  - component: {fileID: 114204107145132194}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: CoinManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4926772181291570
+--- !u!4 &4300190080106106
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1591564457108686}
+  m_GameObject: {fileID: 1099175284582654}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.65349984, y: 0.59311175, z: -1.561034}
+  m_LocalPosition: {x: 0.6015625, y: 1.5483398, z: -0.74902344}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114857260354189918
+--- !u!114 &114204107145132194
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1591564457108686}
+  m_GameObject: {fileID: 1099175284582654}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 50f21d4363f6cb54796469773a140de3, type: 3}
@@ -54,26 +53,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   columns: 4
   rows: 4
-  startingX: 0
-  startingZ: 0
-  endingX: 3
-  endingZ: 3
+  startingX: 1
+  startingZ: 1
+  endingX: 2
+  endingZ: 2
   coinColors:
-  - {r: 0, g: 1, b: 0, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 0, b: 1, a: 1}
-  - {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  - {r: 0.60294116, g: 0.32363755, b: 0.32363755, a: 0}
+  - {r: 0.39294982, g: 0.6764706, b: 0.53568786, a: 0}
+  - {r: 0.625, g: 0.6139706, b: 0.22518381, a: 0}
+  - {r: 0.37240475, g: 0.27249134, b: 0.77205884, a: 0}
   CoinPrefab: {fileID: 0}
---- !u!114 &114961710036071080
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1591564457108686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db24cb9b0e44ec04d829dad006411c78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinManager: {fileID: 114204107145132194, guid: a92957d80a565764ebb6447ea7aaa244,
-    type: 2}
