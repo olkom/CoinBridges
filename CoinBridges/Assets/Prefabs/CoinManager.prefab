@@ -51,15 +51,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50f21d4363f6cb54796469773a140de3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CoinPrefab: {fileID: 0}
+  coinColors:
+  - {r: 0.60294116, g: 0.32363755, b: 0.32363755, a: 0}
+  - {r: 0.39294982, g: 0.6764706, b: 0.53568786, a: 0}
+  - {r: 0.625, g: 0.6139706, b: 0.22518381, a: 0}
+  - {r: 0.37240475, g: 0.27249134, b: 0.77205884, a: 0}
+  CoinsInHand: 3
+  yoffsetHand: 0.4
   columns: 4
   rows: 4
   startingX: 1
   startingZ: 1
   endingX: 2
   endingZ: 2
-  coinColors:
-  - {r: 0.60294116, g: 0.32363755, b: 0.32363755, a: 0}
-  - {r: 0.39294982, g: 0.6764706, b: 0.53568786, a: 0}
-  - {r: 0.625, g: 0.6139706, b: 0.22518381, a: 0}
-  - {r: 0.37240475, g: 0.27249134, b: 0.77205884, a: 0}
-  CoinPrefab: {fileID: 0}
+  yoffsetBoard: 0.2

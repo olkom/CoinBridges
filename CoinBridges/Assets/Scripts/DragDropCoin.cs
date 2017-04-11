@@ -7,7 +7,7 @@ public class DragDropCoin : MonoBehaviour
     private bool isOver;
     private bool up;
     private Vector3 startPosition;
-    public GameObject coin;
+    public Coin coin;
     private float dragY;
     private float dropY;
     private float CameraHeight;
@@ -30,23 +30,29 @@ public class DragDropCoin : MonoBehaviour
 
     IEnumerator OnMouseDown()
     {
-        up = false;
-        dragY = coin.transform.position.y;
-        while (up == false)
+        if (coin.isDragable)
         {
-            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            Vector3 pos = ray.origin + (ray.direction * CameraHeight);
-            coin.transform.position = pos;
-            yield return new WaitForEndOfFrame();
+            up = false;
+            dragY = coin.transform.position.y;
+            while (up == false)
+            {
+                var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                Vector3 pos = ray.origin + (ray.direction * CameraHeight);
+                coin.transform.position = pos;
+                yield return new WaitForEndOfFrame();
+            }
         }
     }
 
     void OnMouseUp()
     {
-        up = true;
-        dropY = dragY;
-        Vector3 pos = new Vector3(coin.transform.position.x, dropY, coin.transform.position.z);
-        coin.transform.position = pos;
+        if (coin.isDragable)
+        {
+            up = true;
+            dropY = dragY;
+            Vector3 pos = new Vector3(coin.transform.position.x, dropY, coin.transform.position.z);
+            coin.transform.position = pos;
+        }
     }
 
     public void Reset()
