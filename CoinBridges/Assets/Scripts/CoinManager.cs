@@ -24,14 +24,9 @@ public class CoinManager : MonoBehaviour {
     // number of rows and columns with coins.
     public int columns = 4;
     public int rows = 4;
-    // starting coin position
-    public int startingX = 0; 
-    public int startingZ = 0;
-    // ending coin position
-    public int endingX = 3;
-    public int endingZ = 3;
     // height offset so that the coins lay flat on the ground.
     public float yoffsetBoard = 0.2f;
+    
 
 
     void LayoutCoinsOnBoard()
@@ -44,37 +39,17 @@ public class CoinManager : MonoBehaviour {
         {
             for (float z = 0; z < rows; z++)
             {
+                
                 //randomizing color for the coin about to be placed.
                 Color botColor = RandomColor();
                 Color topColor = RandomColor();
                 
                 //instantiate the coin prefab at the x, z coordinates that we loop through
                 Coin coin = Instantiate(CoinPrefab, new Vector3(x, yoffsetBoard, z), Quaternion.identity) as Coin;
-
-                //accessing the renderers of the child and parent (bottom and top)
-                Renderer[] renderers = coin.GetComponentsInChildren<Renderer>();
-
-                //accessing the bottom renderer by looking at both renderers and 
-                foreach (Renderer renderer in renderers)
-                {
-                    if (renderer.gameObject.transform.parent != null)
-                    { //child renderer -> bottomcolor
-
-                        //this sets the starting and ending coins bottom color to black.
-                        if ((x == startingX && z == startingZ) || (x == endingX && z == endingZ))
-                        {
-                            renderer.material.color = Color.black;
-                        }
-                        else
-                        {
-                            renderer.material.color = botColor;
-                        }
-                    }
-                    else //parent renderer -> topColor
-                    {
-                        renderer.material.color = topColor;
-                    }
-                }
+                //setting top and bottom color
+                coin.TopColor = topColor;
+                coin.BotColor = botColor;
+               
                 //putting the new spawned coin under the boardholder parent.
                 coin.transform.SetParent(coinHolder);
                 // naming the coin x.z
@@ -97,26 +72,11 @@ public class CoinManager : MonoBehaviour {
 
             //instantiate the coin prefab at the x, z coordinates that we loop through
             Coin coin = Instantiate(CoinPrefab, new Vector3(x, yoffsetHand, z), Quaternion.identity) as Coin;
-
-            //accessing the renderers of the child and parent (bottom and top)
-            Renderer[] renderers = coin.GetComponentsInChildren<Renderer>();
-
-            //accessing the bottom renderer by looking at both renderers and 
-            foreach (Renderer renderer in renderers)
-            {
-                if (renderer.gameObject.transform.parent != null)
-                { //child renderer -> bottomcolor
-                    renderer.material.color = botColor;
-                    
-                }
-                else //parent renderer -> topColor
-                {
-                    renderer.material.color = topColor;
-                }
-            }
-            //putting the new spawned coin under the boardholder parent.
-            //coin.transform.SetParent(coinHolder);
-            // naming the coin x.z
+            //setting top and bottom color
+            coin.TopColor = topColor;
+            coin.BotColor = botColor;
+           
+            // naming the coin
             coin.name = "Handcoin " + x;
             // setting the coin to be dragable, since it is in the hand.
             coin.isDragable = true;
@@ -129,6 +89,11 @@ public class CoinManager : MonoBehaviour {
         Color randomColor = coinColors[Random.Range(0, coinColors.Length)];
         return randomColor;
     }
+
+    /*public Coin GetTopCoin(Vector3 pos)
+    {
+        
+    }*/
 
     // the call function from the game manager
     public void LayStartingCoins()
