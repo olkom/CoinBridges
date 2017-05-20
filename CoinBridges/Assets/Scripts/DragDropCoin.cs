@@ -17,6 +17,7 @@ public class DragDropCoin : MonoBehaviour
     {
         startPosition = draggedCoin.transform.position;
         CameraHeight = 5.5f; //depending on the main camera height over the board.
+        
     }
 
     void OnMouseEnter()
@@ -55,6 +56,7 @@ public class DragDropCoin : MonoBehaviour
             //Vector3 pos = new Vector3(coin.transform.position.x, dropY, coin.transform.position.z);
             //the mathf.Round makes the coin snap to increments of 1 in the X and Z directions.
             Vector3 pos = new Vector3(Mathf.Round(draggedCoin.transform.position.x), dropY, Mathf.Round(draggedCoin.transform.position.z));
+            
             //dropCoin = CoinManager.GetTopCoin(pos); <- here we will check if the coin can be placed on another coin.
             draggedCoin.transform.position = pos;
         }

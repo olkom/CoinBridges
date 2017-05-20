@@ -1,10 +1,12 @@
 fileFormatVersion: 2
 guid: db24cb9b0e44ec04d829dad006411c78
-timeCreated: 1490226010
+timeCreated: 1493419993
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - coinManager: {fileID: 114500299576877738, guid: 5469005f3c3a8ec4d825ed0657dad10a,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

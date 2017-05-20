@@ -11,6 +11,10 @@ public class Coin : MonoBehaviour {
 
     public Color TopColor
     {
+        get
+        {
+            return topColor;
+        }
         set
         {
             topColor = value;
@@ -22,10 +26,6 @@ public class Coin : MonoBehaviour {
                     renderer.material.color = topColor;
                 }
             }
-        }
-        get
-        {
-            return topColor;
         }
     }
 
@@ -49,15 +49,4 @@ public class Coin : MonoBehaviour {
         }
     }
 
-    // Use this for initialization
-    void Start () {
-        
-    }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-    
-    
 }
