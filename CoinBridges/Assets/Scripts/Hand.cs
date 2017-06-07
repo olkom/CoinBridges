@@ -4,39 +4,23 @@ using UnityEngine;
 
 public class Hand : MonoBehaviour {
 
-    private int nbrOfCoins;
-    private int nbrOfBridges;
+    public int NbrOfCoinsInHand = 3;
+    public Coin[] handCoins = new Coin[3];
+    
+    
     public float yoffsetHand = 0.4f;
 
-    public int NbrOfCoins
+    public void addCoinToHandArray(float CoinNbr, Coin handCoin)
     {
-        set
-        {
-            nbrOfCoins = value;
-        }
-        get
-        {
-            return nbrOfCoins;
-        }
-    }
-    public int NbrOfBridges
-    {
-        set
-        {
-            nbrOfBridges = value;
-        }
-        get
-        {
-            return nbrOfBridges;
-        }
+        handCoins[(int)CoinNbr] = handCoin;
     }
 
     // Use this for initialization
     void Start () {
-        
+       
     }
-	
-	// Update is called once per frame
+
+    // Update is called once per frame
 	void Update () {
 		
 	}

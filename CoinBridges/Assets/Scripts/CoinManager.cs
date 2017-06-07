@@ -9,13 +9,13 @@ public class CoinManager : MonoBehaviour {
     public Coin CoinPrefab;
     // the different colors that coins can have
     public Color[] coinColors = { Color.green, Color.red, Color.blue, Color.yellow };
-    // a holder gameObject that we use as a parent to the instantiated coins (keeps hierarchy clean)
-    private Transform coinHolder;
+    // a holder gameObject that we use as a parent to the instantiated coins (keeps hierarchy clean) NOT WORKING?!
+    //private Transform coinHolder;
 
 
-    public void AddCoin(Vector3 position, bool isDragable)
+    public Coin AddCoin(Vector3 position, bool isDragable)
     {
-        //coinHolder = new GameObject("BoardCoins").transform;
+
         //randomizing color for the coin about to be placed.
         Color botColor = RandomColor();
         Color topColor = RandomColor();
@@ -26,7 +26,7 @@ public class CoinManager : MonoBehaviour {
         coin.TopColor = topColor;
         coin.BotColor = botColor;
 
-        //putting the new spawned coin under the boardholder parent.
+        //putting the new spawned coin under the boardholder parent. NOT WORKING...
         //coin.transform.SetParent(coinHolder);
 
         //Setting the coin to be dragable or not
@@ -37,6 +37,7 @@ public class CoinManager : MonoBehaviour {
         {
             coin.isDragable = false;
         }
+        return coin;
     }
 
     //Funciton for returning a random color out of the colors in the coinColors array.

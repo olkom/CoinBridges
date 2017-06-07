@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-    //public BoardManager boardScript;
+    
     public CoinManager coinManager;
 
-    //public Hand playerHand;
-    public Hand handPrefab;
+    // ------   HAND     ------
+    // number of coins in the hand of the player
+    public Hand hand;
     public int NbrOfCoinsInHand = 3;
 
     // ------   BOARD     ------
-    // number of rows and columns with coins.
+    // number of rows and columns with coins. 
+    
+    //THESE VALUES ARE SET TWICE AT THE MOMENT, FIX!! (ALSO IN BOARD SCRIPT)
     public Board board;
     public int columns = 4;
     public int rows = 4;
@@ -25,7 +28,6 @@ public class GameManager : MonoBehaviour {
 	
     void InitGame()
     {
-        
         LayoutCoinsOnBoard();
         LayoutCoinsInHand();
     }
@@ -42,25 +44,16 @@ public class GameManager : MonoBehaviour {
         {
             for (float z = 0; z < rows; z++)
             {
-                coinManager.AddCoin(new Vector3(x, 0.2f, z), false);
-                board.SetTopCoin(new Vector3(x, 0, z));
-                //board.board[(int)x][(int)z] = 1;
-                //TopCoinHeight[(int)x][(int)z] = 0; 
-
+                board.AddTopCoin(new Vector3(x, 0, z), coinManager.AddCoin(new Vector3(x, 0.2f, z), false));
             }
-            
         }
     }
     void LayoutCoinsInHand()
     {
-        Hand hand1 = Instantiate(handPrefab, new Vector3(2, -0.25f, -2), Quaternion.identity) as Hand;
-        hand1.NbrOfCoins = NbrOfCoinsInHand;
-        //coinHolder = new GameObject("BoardCoins").transform;
-
-        for (float x = 0; x < hand1.NbrOfCoins; x++)
+        for (float x = 0; x < NbrOfCoinsInHand; x++)
         {
             float z = -2;
-            coinManager.AddCoin(new Vector3(x, hand1.yoffsetHand, z), true);
+            hand.addCoinToHandArray(x, coinManager.AddCoin(new Vector3(x, hand.yoffsetHand, z), true));
         }
     }
 }

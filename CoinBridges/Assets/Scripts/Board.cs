@@ -4,22 +4,33 @@ using UnityEngine;
 
 public class Board : MonoBehaviour {
 
+    //THESE VALUES ARE SET TWICE AT THE MOMENT, FIX!! (ALSO IN GAMEMANAGER SCRIPT)
+
     public int columns = 4;
     public int rows = 4;
     // height offset so that the coins lay flat on the ground.
     public float yoffsetBoard = 0.2f;
-    public int[,] TopCoins = new int[4,4];
+    public Coin[,] BoardTopCoins = new Coin[4,4];
 
     //private Transform coinHolder;
-    public void SetTopCoin(Vector3 position)
+    public void AddTopCoin(Vector3 position, Coin topCoin)
     {
-        TopCoins[(int)position.x,(int)position.z] = (int)position.y;
+        BoardTopCoins[(int)position.x, (int)position.z] = topCoin;
     }
-    public int GetTopCoin(int x, int z)
+    public Color GetTopCoinTopColor(float x, float z)
     {
-        return TopCoins[x,z];
+        if (((int)x > rows-1 || (int)z > columns-1) || ((int)x < 0 || (int)z < 0)) // this statement make sure to return black when asking for a position outside the coins on the board.
+        {
+            return Color.black;
+        }
+        else
+        {
+            return BoardTopCoins[(int)x, (int)z].TopColor;
+        }
     }
-        // Use this for initialization
+    
+
+    // Use this for initialization
     void Start () {
 		
 	}
@@ -28,38 +39,4 @@ public class Board : MonoBehaviour {
 	void Update () {
 		
 	}
-
-    /*void SetupCoinsOnBoard()
-    {
-        //setting up a holder for the objects to be instantiated.
-        coinHolder = new GameObject("BoardCoins").transform;
-
-        //looping through the x and z of our board
-        for (float x = 0; x < columns; x++)
-        {
-            for (float z = 0; z < rows; z++)
-            {
-                
-                
-                //TopCoinHeight[(int)x][(int)z] = 0; 
-                //randomizing color for the coin about to be placed.
-                //Color botColor = RandomColor();
-                //Color topColor = RandomColor();
-
-                //instantiate the coin prefab at the x, z coordinates that we loop through
-                Coin coin = Instantiate(CoinPrefab, new Vector3(x, yoffsetBoard, z), Quaternion.identity) as Coin;
-                //setting top and bottom color
-                coin.TopColor = topColor;
-                coin.BotColor = botColor;
-
-                //putting the new spawned coin under the boardholder parent.
-                coin.transform.SetParent(coinHolder);
-                // naming the coin x.z
-                coin.name = "coin " + x + "." + z;
-                // setting the coin to be not dragable, since it is on the board already.
-                coin.isDragable = false;
-
-            }
-        }
-    }*/
 }

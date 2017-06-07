@@ -177,7 +177,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDragable: 0
-  canBeDroppedOn: 0
 --- !u!114 &114776276548102620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -189,8 +188,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8414f8fd2435874ebe9dd10a19cb2b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  board: {fileID: 114832768858087948, guid: 69b6b2c7b10d90442b9aa520f973a696, type: 2}
   draggedCoin: {fileID: 114369226809848044}
-  dropCoin: {fileID: 0}
+  boardCoinTopColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!136 &136400987546803732
 CapsuleCollider:
   m_ObjectHideFlags: 1

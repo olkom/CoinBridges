@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class DragDropCoin : MonoBehaviour
 {
+    public Board board;
     private bool isOver;
     private bool up;
     private Vector3 startPosition;
     public Coin draggedCoin;
-    public Coin dropCoin;
+    public Color boardCoinTopColor;
     private float dragY;
     private float dropY;
     private float CameraHeight;
@@ -56,9 +58,20 @@ public class DragDropCoin : MonoBehaviour
             //Vector3 pos = new Vector3(coin.transform.position.x, dropY, coin.transform.position.z);
             //the mathf.Round makes the coin snap to increments of 1 in the X and Z directions.
             Vector3 pos = new Vector3(Mathf.Round(draggedCoin.transform.position.x), dropY, Mathf.Round(draggedCoin.transform.position.z));
+
+            boardCoinTopColor = board.GetTopCoinTopColor(pos.x, pos.z);
             
-            //dropCoin = CoinManager.GetTopCoin(pos); <- here we will check if the coin can be placed on another coin.
-            draggedCoin.transform.position = pos;
+            if (boardCoinTopColor.Equals(draggedCoin.BotColor))
+            {
+                
+                draggedCoin.transform.position = pos;
+                // Signal the hand to add new coin
+                // Signal board to change topCoin!
+
+            } else
+            {
+                Reset();
+            }
         }
     }
 
@@ -72,6 +85,7 @@ public class DragDropCoin : MonoBehaviour
         if (isOver)
         {
             GUI.Button(new Rect(Screen.width / 2+200, Screen.height / 2, 200, 20), "x: "+draggedCoin.transform.position.x + " z: "+draggedCoin.transform.position.z);
+            //GUI.Button(new Rect(Screen.width / 2 + 200, Screen.height / 2, 200, 20), "top: " + draggedCoin.TopColor + " bot: " + draggedCoin.BotColor);
         }
     }
 }
