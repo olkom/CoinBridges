@@ -188,7 +188,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8414f8fd2435874ebe9dd10a19cb2b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinManager: {fileID: 114500299576877738, guid: 5469005f3c3a8ec4d825ed0657dad10a,
+    type: 2}
   board: {fileID: 114832768858087948, guid: 69b6b2c7b10d90442b9aa520f973a696, type: 2}
+  hand: {fileID: 0}
   draggedCoin: {fileID: 114369226809848044}
   boardCoinTopColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!136 &136400987546803732

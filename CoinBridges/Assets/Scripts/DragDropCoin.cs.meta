@@ -1,13 +1,16 @@
 fileFormatVersion: 2
 guid: a8414f8fd2435874ebe9dd10a19cb2b2
-timeCreated: 1493154085
+timeCreated: 1497217860
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
+  - coinManager: {fileID: 114500299576877738, guid: 5469005f3c3a8ec4d825ed0657dad10a,
+      type: 2}
+  - board: {instanceID: 0}
+  - hand: {instanceID: 0}
   - draggedCoin: {fileID: 114369226809848044, guid: 22dbf06b4efe56a4baf9afdf804053cb,
       type: 2}
-  - dropCoin: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

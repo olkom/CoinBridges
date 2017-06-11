@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class DragDropCoin : MonoBehaviour
 {
+    public CoinManager coinManager;
     public Board board;
+    public Hand hand;
     private bool isOver;
     private bool up;
     private Vector3 startPosition;
@@ -14,12 +16,13 @@ public class DragDropCoin : MonoBehaviour
     private float dragY;
     private float dropY;
     private float CameraHeight;
+    private float coinHeight;
 
     void Awake()
     {
         startPosition = draggedCoin.transform.position;
         CameraHeight = 5.5f; //depending on the main camera height over the board.
-        
+        coinHeight = 0.2f; //height of the gameobject, so that placed coins land on top of the other..
     }
 
     void OnMouseEnter()
@@ -54,25 +57,35 @@ public class DragDropCoin : MonoBehaviour
         if (draggedCoin.isDragable)
         {
             up = true;
-            dropY = dragY;
+            //dropY = dragY;
+            
             //Vector3 pos = new Vector3(coin.transform.position.x, dropY, coin.transform.position.z);
             //the mathf.Round makes the coin snap to increments of 1 in the X and Z directions.
-            Vector3 pos = new Vector3(Mathf.Round(draggedCoin.transform.position.x), dropY, Mathf.Round(draggedCoin.transform.position.z));
+            Vector3 boardPos = new Vector3(Mathf.Round(draggedCoin.transform.position.x), dragY, Mathf.Round(draggedCoin.transform.position.z));
+            dropY = board.GetTopCoinHeight(boardPos.x, boardPos.z);
+            boardCoinTopColor = board.GetTopCoinTopColor(boardPos.x, boardPos.z);
+            Vector3 dropPos = new Vector3(Mathf.Round(draggedCoin.transform.position.x), dropY+coinHeight, Mathf.Round(draggedCoin.transform.position.z));
 
-            boardCoinTopColor = board.GetTopCoinTopColor(pos.x, pos.z);
-            
             if (boardCoinTopColor.Equals(draggedCoin.BotColor))
             {
                 
-                draggedCoin.transform.position = pos;
-                // Signal the hand to add new coin
-                // Signal board to change topCoin!
+                //draggedCoin.transform.position = pos;
+                CoinPlaced(dropPos);
 
             } else
             {
                 Reset();
             }
         }
+    }
+    void CoinPlaced(Vector3 dropPosition)
+    {
+        draggedCoin.transform.position = dropPosition; //the positioning of the dropped coin.
+        board.AddTopCoin(dropPosition, draggedCoin); //Updated the board topcoins, replaced the coin below with the one you place.
+        draggedCoin.isDragable = false; //After coin has been placed, it can no longer be moved.
+        coinManager.AddCoin(startPosition, true);
+        // Signal the hand to add new coin
+        // Signal board to change topCoin!
     }
 
     public void Reset()

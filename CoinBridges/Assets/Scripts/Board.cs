@@ -28,6 +28,17 @@ public class Board : MonoBehaviour {
             return BoardTopCoins[(int)x, (int)z].TopColor;
         }
     }
+    public float GetTopCoinHeight(float x, float z)
+    {
+        if (((int)x > rows - 1 || (int)z > columns - 1) || ((int)x < 0 || (int)z < 0)) // this statement make sure to return 0 when asking for a position outside the coins on the board.
+        {
+            return 0;
+        }
+        else
+        {
+            return BoardTopCoins[(int)x, (int)z].transform.position.y;
+        }
+    }
     
 
     // Use this for initialization
