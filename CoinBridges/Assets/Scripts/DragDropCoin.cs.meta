@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: a8414f8fd2435874ebe9dd10a19cb2b2
-timeCreated: 1497217860
+timeCreated: 1497477689
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
@@ -10,6 +10,8 @@ MonoImporter:
   - board: {instanceID: 0}
   - hand: {instanceID: 0}
   - draggedCoin: {fileID: 114369226809848044, guid: 22dbf06b4efe56a4baf9afdf804053cb,
+      type: 2}
+  - draggedBridge: {fileID: 114599220488003640, guid: a9bea118d5009294e8834f11871cdee3,
       type: 2}
   executionOrder: 0
   icon: {instanceID: 0}

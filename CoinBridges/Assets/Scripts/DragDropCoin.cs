@@ -11,20 +11,37 @@ public class DragDropCoin : MonoBehaviour
     private bool isOver;
     private bool up;
     private Vector3 startPosition;
+    private Vector3 BridgeStartPosition;
     public Coin draggedCoin;
     public Color boardCoinTopColor;
+    public Bridge draggedBridge;
     private float dragY;
     private float dropY;
     private float CameraHeight;
     private float coinHeight;
+    private string coinOrBridgeType;
 
     void Awake()
     {
-        startPosition = draggedCoin.transform.position;
+        
+        startPosition = transform.position;
+        coinOrBridge();
+        //BridgeStartPosition = draggedBridge.transform.position;
         CameraHeight = 5.5f; //depending on the main camera height over the board.
         coinHeight = 0.2f; //height of the gameobject, so that placed coins land on top of the other..
     }
-
+    void coinOrBridge()
+    {
+        
+        if (transform.childCount > 2)
+        {
+            coinOrBridgeType = "coin"; 
+        }
+        else
+        {
+            coinOrBridgeType = "bridge";
+        }
+    }
     void OnMouseEnter()
     {
         isOver = true;
@@ -49,6 +66,18 @@ public class DragDropCoin : MonoBehaviour
                 yield return new WaitForEndOfFrame();
             }
         }
+        else if (draggedBridge.isDragable)
+        {
+            up = false;
+            dragY = draggedBridge.transform.position.y;
+            while (up == false)
+            {
+                var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                Vector3 pos = ray.origin + (ray.direction * CameraHeight);
+                draggedBridge.transform.position = pos;
+                yield return new WaitForEndOfFrame();
+            }
+        }
     }
     
 
@@ -68,7 +97,6 @@ public class DragDropCoin : MonoBehaviour
 
             if (boardCoinTopColor.Equals(draggedCoin.BotColor))
             {
-                
                 //draggedCoin.transform.position = pos;
                 CoinPlaced(dropPos);
 
@@ -77,6 +105,11 @@ public class DragDropCoin : MonoBehaviour
                 Reset();
             }
         }
+        else if (draggedBridge.isDragable)
+        {
+
+        }
+        
     }
     void CoinPlaced(Vector3 dropPosition)
     {
@@ -95,10 +128,10 @@ public class DragDropCoin : MonoBehaviour
 
     void OnGUI()
     {
-        if (isOver)
+        /*if (isOver)
         {
             GUI.Button(new Rect(Screen.width / 2+200, Screen.height / 2, 200, 20), "x: "+draggedCoin.transform.position.x + " z: "+draggedCoin.transform.position.z);
             //GUI.Button(new Rect(Screen.width / 2 + 200, Screen.height / 2, 200, 20), "top: " + draggedCoin.TopColor + " bot: " + draggedCoin.BotColor);
-        }
+        }*/
     }
 }

@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour {
 
     
     public CoinManager coinManager;
+    public BridgeManager bridgeManager;
 
     // ------   HAND     ------
     // number of coins in the hand of the player
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour {
     {
         LayoutCoinsOnBoard();
         LayoutCoinsInHand();
+        AddBridgeToHand();
     }
 
 	// Update is called once per frame
@@ -55,5 +57,10 @@ public class GameManager : MonoBehaviour {
             float z = -2;
             hand.addCoinToHandArray(x, coinManager.AddCoin(new Vector3(x, hand.yoffsetHand, z), true));
         }
+    }
+
+    void AddBridgeToHand()
+    {
+        bridgeManager.addBridge(new Vector3(0.5f, hand.yoffsetHand, -1), true);
     }
 }

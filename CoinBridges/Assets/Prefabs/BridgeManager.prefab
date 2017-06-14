@@ -51,3 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2c97ec08bafbea448095844c356702e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinManager: {fileID: 114500299576877738, guid: 5469005f3c3a8ec4d825ed0657dad10a,
+    type: 2}
+  bridgePrefab: {fileID: 114599220488003640, guid: a9bea118d5009294e8834f11871cdee3,
+    type: 2}

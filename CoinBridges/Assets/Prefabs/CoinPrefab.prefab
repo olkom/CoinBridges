@@ -57,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1248399302296724}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.332608, y: 0.159, z: 0.4722317}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.8, y: 0.05, z: 0.8}
   m_Children:
   - {fileID: 4755904007526420}
@@ -194,6 +194,7 @@ MonoBehaviour:
   hand: {fileID: 0}
   draggedCoin: {fileID: 114369226809848044}
   boardCoinTopColor: {r: 0, g: 0, b: 0, a: 0}
+  draggedBridge: {fileID: 0}
 --- !u!136 &136400987546803732
 CapsuleCollider:
   m_ObjectHideFlags: 1

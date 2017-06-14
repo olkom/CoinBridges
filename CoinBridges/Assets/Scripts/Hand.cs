@@ -8,6 +8,7 @@ public class Hand : MonoBehaviour {
     public Coin[] handCoins = new Coin[3];
     
     
+    
     public float yoffsetHand = 0.4f;
 
     public void addCoinToHandArray(float CoinNbr, Coin handCoin)
