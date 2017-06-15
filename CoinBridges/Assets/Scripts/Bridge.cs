@@ -5,8 +5,12 @@ using UnityEngine;
 public class Bridge : MonoBehaviour {
 
     public bool isDragable;
+    public Coin[] bridgeCoins = new Coin[2];
 
-
+    public void addCoinTobridge(float coinNbr, Coin bridgeCoin)
+    {
+        bridgeCoins[(int)coinNbr] = bridgeCoin;
+    } 
 	// Use this for initialization
 	void Start () {
 		

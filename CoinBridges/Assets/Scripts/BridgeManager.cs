@@ -15,6 +15,8 @@ public class BridgeManager : MonoBehaviour {
         Coin coin2 = coinManager.AddCoin(position + new Vector3(-0.5f, 0, 0), false);
         coin1.transform.SetParent(bridge.transform);
         coin2.transform.SetParent(bridge.transform);
+        bridge.addCoinTobridge(0, coin1);
+        bridge.addCoinTobridge(1, coin2);
         bridge.isDragable = true;
 
         return bridge;

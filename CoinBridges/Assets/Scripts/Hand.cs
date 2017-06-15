@@ -11,6 +11,7 @@ public class Hand : MonoBehaviour {
     
     public float yoffsetHand = 0.4f;
 
+    //this function is not used at the moment, but might be a better plan?
     public void addCoinToHandArray(float CoinNbr, Coin handCoin)
     {
         handCoins[(int)CoinNbr] = handCoin;

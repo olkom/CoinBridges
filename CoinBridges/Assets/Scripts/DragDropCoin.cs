@@ -107,7 +107,25 @@ public class DragDropCoin : MonoBehaviour
         }
         else if (draggedBridge.isDragable)
         {
+            up = true;
+            
+            //the mathf.Round makes the coin snap to increments of 1 in the X and Z directions.
+            Vector3 boardPos = new Vector3(Mathf.Round(draggedBridge.transform.position.x), dragY, Mathf.Round(draggedBridge.transform.position.z));
+            dropY = board.GetTopCoinHeight(boardPos.x, boardPos.z);
+            boardCoinTopColor = board.GetTopCoinTopColor(boardPos.x, boardPos.z);
+            Vector3 dropPos = new Vector3(Mathf.Round(draggedBridge.transform.position.x), dropY + coinHeight, Mathf.Round(draggedBridge.transform.position.z));
+            //draggedBridge.bridgeCoins[0].BotColor;
+            if (boardCoinTopColor.Equals(draggedBridge.bridgeCoins[0].BotColor))
+            {
+                //draggedCoin.transform.position = pos;
+                CoinPlaced(dropPos); 
+                //BridgePlaced(Position); // to be done next!!
 
+            }
+            else
+            {
+                ResetBridge();
+            }
         }
         
     }
@@ -120,10 +138,18 @@ public class DragDropCoin : MonoBehaviour
         // Signal the hand to add new coin
         // Signal board to change topCoin!
     }
+    void BridgePlaced()
+    {
+        //to be done next!!
+    }
 
     public void Reset()
     {
         draggedCoin.transform.position = startPosition;
+    }
+    public void ResetBridge()
+    {
+        draggedBridge.transform.position = startPosition;
     }
 
     void OnGUI()
