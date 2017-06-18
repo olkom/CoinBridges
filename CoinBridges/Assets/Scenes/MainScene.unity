@@ -309,6 +309,14 @@ Prefab:
       propertyPath: handCoins.Array.data[2]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4663463680935508, guid: 383289780a00ef64ab6efe936a39ab00, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.573
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663463680935508, guid: 383289780a00ef64ab6efe936a39ab00, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.259
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 383289780a00ef64ab6efe936a39ab00, type: 2}
   m_IsPrefabParent: 0

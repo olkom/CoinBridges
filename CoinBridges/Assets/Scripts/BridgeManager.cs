@@ -7,10 +7,10 @@ public class BridgeManager : MonoBehaviour {
     public CoinManager coinManager;
     public Bridge bridgePrefab;
 
-    public Bridge addBridge(Vector3 position, bool isDragable/*, int rotation*/)
+    public Bridge addBridge(Vector3 position, bool isDragable, bool Vertical/*, int rotation*/)
     {
         Bridge bridge = Instantiate(bridgePrefab, position + new Vector3(0, -0.1f, 0), Quaternion.identity) as Bridge;
-        //bridge.transform.Rotate 
+        
         Coin coin1 = coinManager.AddCoin(position + new Vector3(0.5f,0,0), false);
         Coin coin2 = coinManager.AddCoin(position + new Vector3(-0.5f, 0, 0), false);
         coin1.transform.SetParent(bridge.transform);
@@ -18,7 +18,12 @@ public class BridgeManager : MonoBehaviour {
         bridge.addCoinTobridge(0, coin1);
         bridge.addCoinTobridge(1, coin2);
         bridge.isDragable = true;
-
+        if (Vertical)
+        {
+            
+            bridge.transform.Rotate(0, 90, 0);
+            bridge.vertical = true;
+        }
         return bridge;
     }
 

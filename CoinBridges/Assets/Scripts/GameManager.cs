@@ -55,12 +55,12 @@ public class GameManager : MonoBehaviour {
         for (float x = 0; x < NbrOfCoinsInHand; x++)
         {
             float z = -2;
-            hand.addCoinToHandArray(x, coinManager.AddCoin(new Vector3(x, hand.yoffsetHand, z), true));
+            hand.addCoinToHandArray(x, coinManager.AddCoin(new Vector3(x+2, hand.yoffsetHand, z), true));
         }
     }
 
     void AddBridgeToHand()
     {
-        bridgeManager.addBridge(new Vector3(0.5f, hand.yoffsetHand, -1), true);
+        bridgeManager.addBridge(new Vector3(0.5f, hand.yoffsetHand, -1.5f), true, true);
     }
 }

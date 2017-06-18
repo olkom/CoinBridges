@@ -107,11 +107,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinManager: {fileID: 114500299576877738, guid: 5469005f3c3a8ec4d825ed0657dad10a,
     type: 2}
+  bridgeManager: {fileID: 114466384369519000, guid: e23c80c2f80fb4741a27da98263e4323,
+    type: 2}
   board: {fileID: 114832768858087948, guid: 69b6b2c7b10d90442b9aa520f973a696, type: 2}
   hand: {fileID: 114972840564602750, guid: 383289780a00ef64ab6efe936a39ab00, type: 2}
   draggedCoin: {fileID: 114369226809848044, guid: 22dbf06b4efe56a4baf9afdf804053cb,
     type: 2}
   boardCoinTopColor: {r: 0, g: 0, b: 0, a: 0}
+  boardCoinTopColor1: {r: 0, g: 0, b: 0, a: 0}
+  boardCoinTopColor2: {r: 0, g: 0, b: 0, a: 0}
   draggedBridge: {fileID: 114599220488003640}
 --- !u!114 &114599220488003640
 MonoBehaviour:
@@ -125,3 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDragable: 0
+  bridgeCoins:
+  - {fileID: 0}
+  - {fileID: 0}
+  vertical: 0
