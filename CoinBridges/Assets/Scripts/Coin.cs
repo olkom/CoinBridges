@@ -5,6 +5,7 @@ using UnityEngine;
 public class Coin : MonoBehaviour {
 
     public bool isDragable = false;
+    public bool isWinningCoin = false;
     
     private Color topColor;
     private Color botColor;

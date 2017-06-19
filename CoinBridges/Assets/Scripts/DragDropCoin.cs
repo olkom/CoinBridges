@@ -189,7 +189,7 @@ public class DragDropCoin : MonoBehaviour
         board.AddTopCoin(draggedBridge.getCoin2Position(), draggedBridge.bridgeCoins[1]);
         draggedBridge.isDragable = false; //After coin has been placed, it can no longer be moved.
         bridgeManager.addBridge(startPosition+new Vector3(0,bridgeHeight,0), true, !draggedBridge.vertical);
-        
+        //board.CheckWinConditions(draggedBridge);
     }
 
     public void Reset()
