@@ -9,40 +9,19 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1248399302296724}
+  m_RootGameObject: {fileID: 1761753584362480}
   m_IsPrefabParent: 1
---- !u!1 &1248399302296724
+--- !u!1 &1016157540870384
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4285650070911848}
-  - component: {fileID: 33024305375295962}
-  - component: {fileID: 136563688675284856}
-  - component: {fileID: 23067195773407436}
-  - component: {fileID: 65538304140295014}
-  - component: {fileID: 114369226809848044}
-  - component: {fileID: 114776276548102620}
-  m_Layer: 0
-  m_Name: CoinPrefab
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1943820044040572
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4755904007526420}
-  - component: {fileID: 33073115816840172}
-  - component: {fileID: 136400987546803732}
-  - component: {fileID: 23472226175479102}
+  - component: {fileID: 4609025828414976}
+  - component: {fileID: 33846412257942952}
+  - component: {fileID: 136724943538265066}
+  - component: {fileID: 23335841690614804}
   m_Layer: 0
   m_Name: Bottom
   m_TagString: Untagged
@@ -50,70 +29,60 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4285650070911848
+--- !u!1 &1761753584362480
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4111697891223442}
+  - component: {fileID: 33721073385745972}
+  - component: {fileID: 136296702957115310}
+  - component: {fileID: 23618158022285722}
+  - component: {fileID: 65038723137394390}
+  - component: {fileID: 114471564592951886}
+  - component: {fileID: 114211147739577082}
+  m_Layer: 0
+  m_Name: CoinPrefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4111697891223442
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1248399302296724}
+  m_GameObject: {fileID: 1761753584362480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 0.4, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.8, y: 0.05, z: 0.8}
   m_Children:
-  - {fileID: 4755904007526420}
+  - {fileID: 4609025828414976}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4755904007526420
+--- !u!4 &4609025828414976
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1943820044040572}
+  m_GameObject: {fileID: 1016157540870384}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -1.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4285650070911848}
+  m_Father: {fileID: 4111697891223442}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23067195773407436
+--- !u!23 &23335841690614804
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1248399302296724}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 97c0f457b96ab3541b50d4d0c549105e, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!23 &23472226175479102
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1943820044040572}
+  m_GameObject: {fileID: 1016157540870384}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -139,72 +108,104 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &33024305375295962
+--- !u!23 &23618158022285722
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1761753584362480}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 97c0f457b96ab3541b50d4d0c549105e, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &33721073385745972
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1248399302296724}
+  m_GameObject: {fileID: 1761753584362480}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!33 &33073115816840172
+--- !u!33 &33846412257942952
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1943820044040572}
+  m_GameObject: {fileID: 1016157540870384}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65538304140295014
+--- !u!65 &65038723137394390
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1248399302296724}
+  m_GameObject: {fileID: 1761753584362480}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.0000001, y: 2, z: 1.0000002}
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &114369226809848044
+--- !u!114 &114211147739577082
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1248399302296724}
+  m_GameObject: {fileID: 1761753584362480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8414f8fd2435874ebe9dd10a19cb2b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinManager: {fileID: 114805153678182762, guid: 5469005f3c3a8ec4d825ed0657dad10a,
+    type: 2}
+  bridgeManager: {fileID: 114056277722971264, guid: e23c80c2f80fb4741a27da98263e4323,
+    type: 2}
+  board: {fileID: 114753196690249826, guid: 69b6b2c7b10d90442b9aa520f973a696, type: 2}
+  hand: {fileID: 114040760474617956, guid: 383289780a00ef64ab6efe936a39ab00, type: 2}
+  draggedCoin: {fileID: 114471564592951886}
+  boardCoinTopColor: {r: 0, g: 0, b: 0, a: 0}
+  boardCoinTopColor1: {r: 0, g: 0, b: 0, a: 0}
+  boardCoinTopColor2: {r: 0, g: 0, b: 0, a: 0}
+  draggedBridge: {fileID: 0}
+--- !u!114 &114471564592951886
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1761753584362480}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f3ee9435ad8846e4a973cb55a949bc08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isDragable: 0
---- !u!114 &114776276548102620
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1248399302296724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8414f8fd2435874ebe9dd10a19cb2b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinManager: {fileID: 114500299576877738, guid: 5469005f3c3a8ec4d825ed0657dad10a,
-    type: 2}
-  bridgeManager: {fileID: 114466384369519000, guid: e23c80c2f80fb4741a27da98263e4323,
-    type: 2}
-  board: {fileID: 114832768858087948, guid: 69b6b2c7b10d90442b9aa520f973a696, type: 2}
-  hand: {fileID: 0}
-  draggedCoin: {fileID: 114369226809848044}
-  boardCoinTopColor: {r: 0, g: 0, b: 0, a: 0}
-  boardCoinTopColor1: {r: 0, g: 0, b: 0, a: 0}
-  boardCoinTopColor2: {r: 0, g: 0, b: 0, a: 0}
-  draggedBridge: {fileID: 0}
---- !u!136 &136400987546803732
+  isWinningCoin: 0
+--- !u!136 &136296702957115310
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1943820044040572}
+  m_GameObject: {fileID: 1761753584362480}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -212,12 +213,12 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &136563688675284856
+--- !u!136 &136724943538265066
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1248399302296724}
+  m_GameObject: {fileID: 1016157540870384}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1

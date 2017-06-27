@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 
     
-    public CoinManager coinManager;
+    private CoinManager coinManager;
     public BridgeManager bridgeManager;
 
     // ------   HAND     ------

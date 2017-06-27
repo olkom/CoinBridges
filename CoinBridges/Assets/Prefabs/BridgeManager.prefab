@@ -9,17 +9,17 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1974129721221120}
+  m_RootGameObject: {fileID: 1749870190431134}
   m_IsPrefabParent: 1
---- !u!1 &1974129721221120
+--- !u!1 &1749870190431134
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4678919266501268}
-  - component: {fileID: 114466384369519000}
+  - component: {fileID: 4950861379423262}
+  - component: {fileID: 114056277722971264}
   m_Layer: 0
   m_Name: BridgeManager
   m_TagString: Untagged
@@ -27,12 +27,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4678919266501268
+--- !u!4 &4950861379423262
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1974129721221120}
+  m_GameObject: {fileID: 1749870190431134}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.6015625, y: 1.5483398, z: -0.74902344}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,18 +40,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114466384369519000
+--- !u!114 &114056277722971264
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1974129721221120}
+  m_GameObject: {fileID: 1749870190431134}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2c97ec08bafbea448095844c356702e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinManager: {fileID: 114500299576877738, guid: 5469005f3c3a8ec4d825ed0657dad10a,
+  coinManager: {fileID: 114805153678182762, guid: 5469005f3c3a8ec4d825ed0657dad10a,
     type: 2}
-  bridgePrefab: {fileID: 114599220488003640, guid: a9bea118d5009294e8834f11871cdee3,
+  bridgePrefab: {fileID: 114773454423923748, guid: a9bea118d5009294e8834f11871cdee3,
     type: 2}

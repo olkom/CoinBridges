@@ -9,21 +9,21 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1076390962624938}
+  m_RootGameObject: {fileID: 1146473068506340}
   m_IsPrefabParent: 1
---- !u!1 &1076390962624938
+--- !u!1 &1146473068506340
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4369174411759542}
-  - component: {fileID: 33487648086874480}
-  - component: {fileID: 65315278814439666}
-  - component: {fileID: 23983814378085194}
-  - component: {fileID: 114369734970666918}
-  - component: {fileID: 114599220488003640}
+  - component: {fileID: 4561081855258322}
+  - component: {fileID: 33303987555019750}
+  - component: {fileID: 65792978296580196}
+  - component: {fileID: 23580131844404720}
+  - component: {fileID: 114106322404948056}
+  - component: {fileID: 114773454423923748}
   m_Layer: 0
   m_Name: BridgePrefab
   m_TagString: Untagged
@@ -31,12 +31,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4369174411759542
+--- !u!4 &4561081855258322
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1076390962624938}
+  m_GameObject: {fileID: 1146473068506340}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.58, y: 0.15, z: 0.08}
   m_LocalScale: {x: 1, y: 0.19, z: 0.7}
@@ -44,12 +44,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23983814378085194
+--- !u!23 &23580131844404720
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1076390962624938}
+  m_GameObject: {fileID: 1146473068506340}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -75,54 +75,53 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &33487648086874480
+--- !u!33 &33303987555019750
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1076390962624938}
+  m_GameObject: {fileID: 1146473068506340}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65315278814439666
+--- !u!65 &65792978296580196
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1076390962624938}
+  m_GameObject: {fileID: 1146473068506340}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114369734970666918
+--- !u!114 &114106322404948056
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1076390962624938}
+  m_GameObject: {fileID: 1146473068506340}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a8414f8fd2435874ebe9dd10a19cb2b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinManager: {fileID: 114500299576877738, guid: 5469005f3c3a8ec4d825ed0657dad10a,
+  coinManager: {fileID: 114805153678182762, guid: 5469005f3c3a8ec4d825ed0657dad10a,
     type: 2}
-  bridgeManager: {fileID: 114466384369519000, guid: e23c80c2f80fb4741a27da98263e4323,
+  bridgeManager: {fileID: 114056277722971264, guid: e23c80c2f80fb4741a27da98263e4323,
     type: 2}
-  board: {fileID: 114832768858087948, guid: 69b6b2c7b10d90442b9aa520f973a696, type: 2}
-  hand: {fileID: 114972840564602750, guid: 383289780a00ef64ab6efe936a39ab00, type: 2}
-  draggedCoin: {fileID: 114369226809848044, guid: 22dbf06b4efe56a4baf9afdf804053cb,
-    type: 2}
+  board: {fileID: 114753196690249826, guid: 69b6b2c7b10d90442b9aa520f973a696, type: 2}
+  hand: {fileID: 114040760474617956, guid: 383289780a00ef64ab6efe936a39ab00, type: 2}
+  draggedCoin: {fileID: 0}
   boardCoinTopColor: {r: 0, g: 0, b: 0, a: 0}
   boardCoinTopColor1: {r: 0, g: 0, b: 0, a: 0}
   boardCoinTopColor2: {r: 0, g: 0, b: 0, a: 0}
-  draggedBridge: {fileID: 114599220488003640}
---- !u!114 &114599220488003640
+  draggedBridge: {fileID: 114773454423923748}
+--- !u!114 &114773454423923748
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1076390962624938}
+  m_GameObject: {fileID: 1146473068506340}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7d3bc8f8c9dc2b4d93718d2bebfc9a2, type: 3}

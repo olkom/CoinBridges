@@ -8,7 +8,7 @@ public class CoinManager : MonoBehaviour {
     //The gameobject Coin, in the prefab folder that we use to instantiate
     public Coin CoinPrefab;
     // the different colors that coins can have
-    public Color[] coinColors = { Color.green, Color.red, Color.blue, Color.yellow };
+    public Color[] coinColors = { Color.green, Color.red , Color.blue, Color.yellow };
     // a holder gameObject that we use as a parent to the instantiated coins (keeps hierarchy clean) NOT WORKING?!
     //private Transform coinHolder;
 

@@ -1,20 +1,18 @@
 fileFormatVersion: 2
 guid: a8414f8fd2435874ebe9dd10a19cb2b2
-timeCreated: 1497826140
+timeCreated: 1498601408
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
-  - coinManager: {fileID: 114500299576877738, guid: 5469005f3c3a8ec4d825ed0657dad10a,
+  - coinManager: {fileID: 114004030841213366, guid: 5469005f3c3a8ec4d825ed0657dad10a,
       type: 2}
-  - bridgeManager: {fileID: 114466384369519000, guid: e23c80c2f80fb4741a27da98263e4323,
+  - bridgeManager: {fileID: 114056277722971264, guid: e23c80c2f80fb4741a27da98263e4323,
       type: 2}
-  - board: {instanceID: 0}
-  - hand: {instanceID: 0}
-  - draggedCoin: {fileID: 114369226809848044, guid: 22dbf06b4efe56a4baf9afdf804053cb,
-      type: 2}
-  - draggedBridge: {fileID: 114599220488003640, guid: a9bea118d5009294e8834f11871cdee3,
-      type: 2}
+  - board: {fileID: 114753196690249826, guid: 69b6b2c7b10d90442b9aa520f973a696, type: 2}
+  - hand: {fileID: 114040760474617956, guid: 383289780a00ef64ab6efe936a39ab00, type: 2}
+  - draggedCoin: {instanceID: 0}
+  - draggedBridge: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

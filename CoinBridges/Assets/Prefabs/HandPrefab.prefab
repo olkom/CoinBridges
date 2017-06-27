@@ -9,38 +9,18 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1735659833192404}
+  m_RootGameObject: {fileID: 1778776299339828}
   m_IsPrefabParent: 1
---- !u!1 &1735659833192404
+--- !u!1 &1057779626915624
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 224909245176990994}
-  - component: {fileID: 33733504280964076}
-  - component: {fileID: 65225938653145922}
-  - component: {fileID: 23954093999143186}
-  - component: {fileID: 222118845254986678}
-  - component: {fileID: 114972840564602750}
-  m_Layer: 0
-  m_Name: HandPrefab
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1911039150148326
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4663463680935508}
-  - component: {fileID: 23787464480350888}
-  - component: {fileID: 102477363339162368}
+  - component: {fileID: 4294308749559570}
+  - component: {fileID: 23300819796729354}
+  - component: {fileID: 102489572836340142}
   m_Layer: 0
   m_Name: HandText
   m_TagString: Untagged
@@ -48,25 +28,45 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4663463680935508
+--- !u!1 &1778776299339828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224597986986928946}
+  - component: {fileID: 33569181785624058}
+  - component: {fileID: 65995402874997206}
+  - component: {fileID: 23660299232069114}
+  - component: {fileID: 222271775693958364}
+  - component: {fileID: 114040760474617956}
+  m_Layer: 0
+  m_Name: HandPrefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4294308749559570
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1911039150148326}
+  m_GameObject: {fileID: 1057779626915624}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.214, y: 0.19, z: 0.39}
+  m_LocalPosition: {x: 0.259, y: 0.19, z: 0.573}
   m_LocalScale: {x: 0.1, y: 0.7, z: 0.5}
   m_Children: []
-  m_Father: {fileID: 224909245176990994}
+  m_Father: {fileID: 224597986986928946}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!23 &23787464480350888
+--- !u!23 &23300819796729354
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1911039150148326}
+  m_GameObject: {fileID: 1057779626915624}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -92,12 +92,12 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!23 &23954093999143186
+--- !u!23 &23660299232069114
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1735659833192404}
+  m_GameObject: {fileID: 1778776299339828}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -123,32 +123,32 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &33733504280964076
+--- !u!33 &33569181785624058
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1735659833192404}
+  m_GameObject: {fileID: 1778776299339828}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65225938653145922
+--- !u!65 &65995402874997206
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1735659833192404}
+  m_GameObject: {fileID: 1778776299339828}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!102 &102477363339162368
+--- !u!102 &102489572836340142
 TextMesh:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1911039150148326}
+  m_GameObject: {fileID: 1057779626915624}
   m_Text: Hand
   m_OffsetZ: 0
   m_CharacterSize: 0.1
@@ -163,40 +163,45 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
---- !u!114 &114972840564602750
+--- !u!114 &114040760474617956
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1735659833192404}
+  m_GameObject: {fileID: 1778776299339828}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1d9dd57f96927446890fd5c2175c815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NbrOfCoinsInHand: 3
+  handCoins:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   yoffsetHand: 0.4
---- !u!222 &222118845254986678
+--- !u!222 &222271775693958364
 CanvasRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1735659833192404}
---- !u!224 &224909245176990994
+  m_GameObject: {fileID: 1778776299339828}
+--- !u!224 &224597986986928946
 RectTransform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1735659833192404}
+  m_GameObject: {fileID: 1778776299339828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.78}
+  m_LocalPosition: {x: 0, y: 0, z: -1.47}
   m_LocalScale: {x: 10, y: 1, z: 2}
   m_Children:
-  - {fileID: 4663463680935508}
+  - {fileID: 4294308749559570}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: -0.23}
+  m_AnchoredPosition: {x: 1.63, y: -0.28}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}

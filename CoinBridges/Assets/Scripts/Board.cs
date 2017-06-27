@@ -53,18 +53,26 @@ public class Board : MonoBehaviour {
     //2,2 -> 5,5
 
     public bool[,] BridgePositions = new bool[9, 9];
-    private int bridgePositionX;
+    public Vector2 winPosition1;
+    public Vector2 winPosition2;
+    private Vector2 bridgePosition;
+    //private bool foundPath = false;
+    private List<Vector2> coinPositionsToCheck = new List<Vector2>();
+
+    /*private int bridgePositionX;
     private int bridgePositionZ;
     private int coin1positionX;
     private int coin1positionZ;
     private int coin2positionX;
-    private int coin2positionZ;
-    public Vector2 winPosition1;
-    public Vector2 winPosition2;
-    public bool foundWin1;
-    public bool foundWin2;
-    
+    private int coin2positionZ;*/
 
+    //public bool foundWin1;
+    //public bool foundWin2;
+
+    public void AddBridge(Vector2 position)
+    {
+        BridgePositions[(int)position.x, (int)position.y] = true;
+    }
     public void AddWinningPositions(Vector3 position1, Vector3 position2)
     {
         for (int x=0;x<9;x++)
@@ -80,79 +88,11 @@ public class Board : MonoBehaviour {
         BridgePositions[((int)position2.x * 2) + 1, ((int)position2.z * 2) + 1] = true;
         winPosition2.x = position2.x;
         winPosition2.y = position2.z;
+        
     }
-    
-    
-    //function to as the board if there is a bridge in x,z position.
-    public bool isBridged(int x, int z)
+    public void AddBridgeCheckWinConditions(Bridge bridge)
     {
-        return BridgePositions[x, z];
-    }
-    private void FindBridges(int x, int z)
-    {
-        //top
-        if (isBridged(x, z + 1))
-        {
-            nextCheck(x, z + 1, x, z + 2, x, z);
-        }
-        //right
-        if (isBridged(x + 1, z))
-        {
-            nextCheck(x + 1, z, x + 2, z, x, z);
-        }
-        //bot
-        if (isBridged(x, z - 1))
-        {
-            nextCheck(x, z - 1, x, z - 2, x, z);
-        }
-        //left
-        if (isBridged(x - 1, z))
-        {
-            nextCheck(x - 1, z, x - 2, z, x, z);
-        }
-    }
-    private bool isCoinWinCoin(int x, int z)
-    {
-        if (BridgePositions[x, z])
-        {
-            if (x == winPosition1.x && z == winPosition1.y)
-            {
-                foundWin1 = true;
-                return true;
-            }
-            else if (x == winPosition2.x && z == winPosition2.y)
-            {
-                foundWin2 = true;
-                return true;
-            }
-        } 
-            return false;
-    }
-    private void GameWon()
-    {
-        SceneManager.LoadScene("Main Menu");
-    }
-    private void nextCheck(int bridgeX, int bridgeZ, int coin1X, int coin1Z, int coin2X, int coin2Z)
-    {
-        if (!isCoinWinCoin(coin1X, coin1Z))
-        {
-            FindBridges(coin1X, coin1Z);
-        }
-        if (!isCoinWinCoin(coin2X, coin2Z))
-        {
-            FindBridges(coin2X, coin2Z);
-        }
-
-        AddBridge(bridgeX, bridgeZ);
-        if (foundWin1 && foundWin2)
-        {
-            GameWon();
-        }
-    }
-    //following functions are called when bridge is placed to check winning condition!
-    public void CheckWinConditions(Bridge bridge)
-    {
-        //transfering the values
+        /*//transfering the values
         bridgePositionX = ((int)(bridge.transform.position.x * 2) + 1);
         bridgePositionZ = ((int)(bridge.transform.position.z * 2) + 1);
         coin1positionX = ((int)(bridge.bridgeCoins[0].transform.position.x * 2) + 1);
@@ -167,16 +107,100 @@ public class Board : MonoBehaviour {
         Debug.Log(coin2positionZ);
 
         nextCheck(bridgePositionX, bridgePositionZ, coin1positionX, coin1positionZ, coin2positionX, coin2positionZ);
-
+        */
+        bridgePosition.x = ((int)(bridge.transform.position.x * 2) + 1);
+        bridgePosition.y = ((int)(bridge.transform.position.z * 2) + 1);
+        AddBridge(bridgePosition);
         
+        CheckWinConditions();
 
-
-        
     }
-    // add true to the position in the bridge-grid
-    public void AddBridge(int x, int z)
+    private void CheckWinConditions()
     {
-        BridgePositions[x, z] = true;
+        coinPositionsToCheck.Add(winPosition1);
+        Debug.Log(coinPositionsToCheck.Count);
+        Debug.Log(coinPositionsToCheck);
+
+        //while (coinPositionsToCheck.Count > 0)
+        //{
+        CheckCoinPosition(coinPositionsToCheck[0]);
+        //}
+        Debug.Log(coinPositionsToCheck.Count);
+        Debug.Log(coinPositionsToCheck);
+        coinPositionsToCheck.Clear();
+    }
+    private void CheckCoinPosition(Vector2 position)
+    {
+        FindBridges(position);
+    }
+
+    //function to as the board if there is a bridge in x,z position.
+    public bool IsBridged(Vector2 bridgePosition)
+    {
+        return BridgePositions[(int)bridgePosition.x, (int)bridgePosition.y];
+    }
+    private void FindBridges(Vector2 coinPosition)
+    {
+        //top
+        if (IsBridged(bridgePosition+new Vector2(0,1)))
+        {
+            if ((bridgePosition+new Vector2(0, 2)) == winPosition2)
+            {
+                GameWon();
+            } else
+            {
+                coinPositionsToCheck.Add(bridgePosition + new Vector2(0, 2));
+            }
+        }
+        //right
+        if (IsBridged(bridgePosition + new Vector2(1, 0)))
+        {
+            if ((bridgePosition + new Vector2(2, 0)) == winPosition2)
+            {
+                GameWon();
+            }
+            else
+            {
+                coinPositionsToCheck.Add(bridgePosition + new Vector2(2,0));
+            }
+        }
+        //bot
+        if (IsBridged(bridgePosition + new Vector2(0, -1)))
+        {
+            if ((bridgePosition + new Vector2(0, -2)) == winPosition2)
+            {
+                GameWon();
+            }
+            else
+            {
+                coinPositionsToCheck.Add(bridgePosition + new Vector2(0, -2));
+            }
+        }
+        //left
+        if (IsBridged(bridgePosition + new Vector2(-1, 0)))
+        {
+            if ((bridgePosition + new Vector2(-2, 0)) == winPosition2)
+            {
+                GameWon();
+            }
+            else
+            {
+                coinPositionsToCheck.Add(bridgePosition + new Vector2(-2, 0));
+            }
+        }
+        coinPositionsToCheck.Remove(coinPosition);
+    }
+
+   
+
+    //following functions are called when bridge is placed to check winning condition!
+
+    
+    // add true to the position in the bridge-grid
+
+    private void GameWon()
+    {
+        SceneManager.LoadScene("Main Menu");
     }
     void Update()
     {

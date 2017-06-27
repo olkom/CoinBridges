@@ -9,17 +9,17 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1386807427464734}
+  m_RootGameObject: {fileID: 1309015494561612}
   m_IsPrefabParent: 1
---- !u!1 &1386807427464734
+--- !u!1 &1309015494561612
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4203154846062434}
-  - component: {fileID: 114500299576877738}
+  - component: {fileID: 4357817641038896}
+  - component: {fileID: 114805153678182762}
   m_Layer: 0
   m_Name: CoinManager 1
   m_TagString: Untagged
@@ -27,12 +27,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4203154846062434
+--- !u!4 &4357817641038896
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1386807427464734}
+  m_GameObject: {fileID: 1309015494561612}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.6015625, y: 1.5483398, z: -0.74902344}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,21 +40,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114500299576877738
+--- !u!114 &114805153678182762
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1386807427464734}
+  m_GameObject: {fileID: 1309015494561612}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 50f21d4363f6cb54796469773a140de3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CoinPrefab: {fileID: 114369226809848044, guid: 22dbf06b4efe56a4baf9afdf804053cb,
+  CoinPrefab: {fileID: 114471564592951886, guid: 22dbf06b4efe56a4baf9afdf804053cb,
     type: 2}
   coinColors:
   - {r: 0, g: 1, b: 0, a: 1}
-  - {r: 0.15862082, g: 0, b: 1, a: 1}
   - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0.94482756, g: 1, b: 0, a: 1}
+  - {r: 0, g: 0, b: 1, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.015686275, a: 1}

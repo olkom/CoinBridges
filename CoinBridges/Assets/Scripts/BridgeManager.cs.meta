@@ -1,10 +1,14 @@
 fileFormatVersion: 2
 guid: d2c97ec08bafbea448095844c356702e
-timeCreated: 1490993375
+timeCreated: 1498601449
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - coinManager: {fileID: 114004030841213366, guid: 5469005f3c3a8ec4d825ed0657dad10a,
+      type: 2}
+  - bridgePrefab: {fileID: 114773454423923748, guid: a9bea118d5009294e8834f11871cdee3,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
