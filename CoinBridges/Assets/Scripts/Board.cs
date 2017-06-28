@@ -83,12 +83,16 @@ public class Board : MonoBehaviour {
             }
         }
         BridgePositions[((int)position1.x * 2) + 1, ((int)position1.z * 2) + 1] = true;
-        winPosition1.x = position1.x;
-        winPosition1.y = position1.z;
+        winPosition1.x = ((int)position1.x*2)+1;
+        winPosition1.y = ((int)position1.z*2)+1;
         BridgePositions[((int)position2.x * 2) + 1, ((int)position2.z * 2) + 1] = true;
-        winPosition2.x = position2.x;
-        winPosition2.y = position2.z;
-        
+        winPosition2.x = ((int)position2.x*2)+1;
+        winPosition2.y = ((int)position2.z*2)+1;
+        //Debug.Log(winPosition1.x);
+        //Debug.Log(winPosition1.y);
+        //Debug.Log(winPosition2.x);
+        //Debug.Log(winPosition2.y);
+
     }
     public void AddBridgeCheckWinConditions(Bridge bridge)
     {
@@ -108,8 +112,8 @@ public class Board : MonoBehaviour {
 
         nextCheck(bridgePositionX, bridgePositionZ, coin1positionX, coin1positionZ, coin2positionX, coin2positionZ);
         */
-        bridgePosition.x = ((int)(bridge.transform.position.x * 2) + 1);
-        bridgePosition.y = ((int)(bridge.transform.position.z * 2) + 1);
+        bridgePosition.x = (bridge.transform.position.x * 2) + 1;
+        bridgePosition.y = (bridge.transform.position.z * 2) + 1;
         AddBridge(bridgePosition);
         
         CheckWinConditions();
@@ -117,17 +121,32 @@ public class Board : MonoBehaviour {
     }
     private void CheckWinConditions()
     {
+        //Debug.Log(winPosition1.x);
+        //Debug.Log(winPosition1.y);
+        Debug.Log(coinPositionsToCheck.Count);
         coinPositionsToCheck.Add(winPosition1);
         Debug.Log(coinPositionsToCheck.Count);
-        Debug.Log(coinPositionsToCheck);
+        //Debug.Log(coinPositionsToCheck);
+        /*for (int x = 1; x < 8; x++)
+        {
+            for (int z = 1; z < 8; z++)
+            {
+                Debug.Log(BridgePositions[x, z]);
+                 
+            }
+        }*/
+
 
         //while (coinPositionsToCheck.Count > 0)
         //{
-        CheckCoinPosition(coinPositionsToCheck[0]);
+        //Debug.Log(coinPositionsToCheck[0].x);
+        //Debug.Log(coinPositionsToCheck[0].y);
+        CheckCoinPosition(winPosition1);
         //}
-        Debug.Log(coinPositionsToCheck.Count);
-        Debug.Log(coinPositionsToCheck);
+        //Debug.Log(coinPositionsToCheck.Count);
+        //Debug.Log(coinPositionsToCheck);
         coinPositionsToCheck.Clear();
+        //Debug.Log(coinPositionsToCheck.Count);
     }
     private void CheckCoinPosition(Vector2 position)
     {
@@ -137,55 +156,57 @@ public class Board : MonoBehaviour {
     //function to as the board if there is a bridge in x,z position.
     public bool IsBridged(Vector2 bridgePosition)
     {
+        //Debug.Log(bridgePosition.x);
+        //Debug.Log(bridgePosition.y);
         return BridgePositions[(int)bridgePosition.x, (int)bridgePosition.y];
     }
     private void FindBridges(Vector2 coinPosition)
     {
         //top
-        if (IsBridged(bridgePosition+new Vector2(0,1)))
+        if (IsBridged(coinPosition + new Vector2(0,1)))
         {
-            if ((bridgePosition+new Vector2(0, 2)) == winPosition2)
+            if ((coinPosition + new Vector2(0, 2)) == winPosition2)
             {
                 GameWon();
             } else
             {
-                coinPositionsToCheck.Add(bridgePosition + new Vector2(0, 2));
+                coinPositionsToCheck.Add(coinPosition + new Vector2(0, 2));
             }
         }
         //right
-        if (IsBridged(bridgePosition + new Vector2(1, 0)))
+        if (IsBridged(coinPosition + new Vector2(1, 0)))
         {
-            if ((bridgePosition + new Vector2(2, 0)) == winPosition2)
+            if ((coinPosition + new Vector2(2, 0)) == winPosition2)
             {
                 GameWon();
             }
             else
             {
-                coinPositionsToCheck.Add(bridgePosition + new Vector2(2,0));
+                coinPositionsToCheck.Add(coinPosition + new Vector2(2,0));
             }
         }
         //bot
-        if (IsBridged(bridgePosition + new Vector2(0, -1)))
+        if (IsBridged(coinPosition + new Vector2(0, -1)))
         {
-            if ((bridgePosition + new Vector2(0, -2)) == winPosition2)
+            if ((coinPosition + new Vector2(0, -2)) == winPosition2)
             {
                 GameWon();
             }
             else
             {
-                coinPositionsToCheck.Add(bridgePosition + new Vector2(0, -2));
+                coinPositionsToCheck.Add(coinPosition + new Vector2(0, -2));
             }
         }
         //left
-        if (IsBridged(bridgePosition + new Vector2(-1, 0)))
+        if (IsBridged(coinPosition + new Vector2(-1, 0)))
         {
-            if ((bridgePosition + new Vector2(-2, 0)) == winPosition2)
+            if ((coinPosition + new Vector2(-2, 0)) == winPosition2)
             {
                 GameWon();
             }
             else
             {
-                coinPositionsToCheck.Add(bridgePosition + new Vector2(-2, 0));
+                coinPositionsToCheck.Add(coinPosition + new Vector2(-2, 0));
             }
         }
         coinPositionsToCheck.Remove(coinPosition);
