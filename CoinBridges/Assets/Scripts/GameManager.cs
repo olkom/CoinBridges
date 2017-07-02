@@ -32,12 +32,10 @@ public class GameManager : MonoBehaviour {
         LayoutCoinsOnBoard();
         LayoutCoinsInHand();
         AddBridgeToHand();
+        board.AddWinningPositions(new Vector3(0, 0, 0), new Vector3(3, 0, 3));
     }
 
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	
 
     void LayoutCoinsOnBoard()
     {
@@ -49,19 +47,20 @@ public class GameManager : MonoBehaviour {
                 board.AddTopCoin(new Vector3(x, 0, z), coinManager.AddCoin(new Vector3(x, 0.2f, z), false));
             }
         }
-        board.AddWinningPositions(new Vector3(0, 0, 0), new Vector3(1, 0, 1));
+        
     }
     void LayoutCoinsInHand()
     {
         for (float x = 0; x < NbrOfCoinsInHand; x++)
         {
             float z = -2;
-            hand.addCoinToHandArray(x, coinManager.AddCoin(new Vector3(x+2, hand.yoffsetHand, z), true));
+            hand.addCoinToHandArray(x, coinManager.AddCoin(new Vector3(x+3, hand.yoffsetHand, z), true));
         }
     }
 
     void AddBridgeToHand()
     {
-        bridgeManager.addBridge(new Vector3(0.5f, hand.yoffsetHand, -1.5f), true, true);
+        bridgeManager.addBridge(new Vector3(1f, hand.yoffsetHand, -1.5f), true, true);
+        bridgeManager.addBridge(new Vector3(-1f, hand.yoffsetHand, -1.5f), true, false);
     }
 }

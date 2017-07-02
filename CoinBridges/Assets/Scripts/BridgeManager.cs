@@ -7,7 +7,7 @@ public class BridgeManager : MonoBehaviour {
     public CoinManager coinManager;
     public Bridge bridgePrefab;
 
-    public Bridge addBridge(Vector3 position, bool isDragable, bool Vertical/*, int rotation*/)
+    public Bridge addBridge(Vector3 position, bool isDragable, bool Vertical)
     {
         Bridge bridge = Instantiate(bridgePrefab, position + new Vector3(0, -0.1f, 0), Quaternion.identity) as Bridge;
         
@@ -26,14 +26,4 @@ public class BridgeManager : MonoBehaviour {
         }
         return bridge;
     }
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

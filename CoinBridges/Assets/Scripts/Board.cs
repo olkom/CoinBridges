@@ -58,6 +58,7 @@ public class Board : MonoBehaviour {
     public Vector2 winPosition2;
     private Vector2 bridgePosition;
     private List<Vector2> coinPositionsToCheck = new List<Vector2>();
+    public GameObject winPositionPrefab;
 
     public void AddBridge(Vector2 position)
     {
@@ -78,6 +79,8 @@ public class Board : MonoBehaviour {
         BridgePositions[((int)position2.x * 2) + 1, ((int)position2.z * 2) + 1] = true;
         winPosition2.x = ((int)position2.x*2)+1;
         winPosition2.y = ((int)position2.z*2)+1;
+        GameObject win1 = Instantiate(winPositionPrefab, position1, Quaternion.identity);
+        GameObject win2 = Instantiate(winPositionPrefab, position2, Quaternion.identity);
     }
     public void AddBridgeCheckWinConditions(Bridge bridge)
     {
