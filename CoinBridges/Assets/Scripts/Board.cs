@@ -74,7 +74,7 @@ public class Board : MonoBehaviour {
             }
         }
         BridgePositions[((int)position1.x * 2) + 1, ((int)position1.z * 2) + 1] = true;
-        winPosition1.x = ((int)position1.x*2)+1;
+        winPosition1.x = ((int)position1.x * 2)+1;
         winPosition1.y = ((int)position1.z*2)+1;
         BridgePositions[((int)position2.x * 2) + 1, ((int)position2.z * 2) + 1] = true;
         winPosition2.x = ((int)position2.x*2)+1;

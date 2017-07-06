@@ -14,8 +14,6 @@ public class DragDropCoin : MonoBehaviour
     private Vector3 startPosition;
     private Vector3 BridgeStartPosition;
     public Coin draggedCoin;
-    //public Coin draggedCoin1;
-    //public Coin draggedCoin2;
     public Color boardCoinTopColor;
     public Color boardCoinTopColor1;
     public Color boardCoinTopColor2;
@@ -35,7 +33,6 @@ public class DragDropCoin : MonoBehaviour
         
         startPosition = transform.position;
         coinOrBridge();
-        //BridgeStartPosition = draggedBridge.transform.position;
         CameraHeight = 5.5f; //depending on the main camera height over the board.
         coinHeight = 0.2f; //height of the gameobject, so that placed coins land on top of the other..
         bridgeHeight = 0.1f;
@@ -64,7 +61,7 @@ public class DragDropCoin : MonoBehaviour
         isOver = false;
     }
 
-    IEnumerator OnMouseDown() // this needs to be fixed! maybe write a whole new part for bridges
+    IEnumerator OnMouseDown() 
     {
         if (coinOrBridgeType == "coin")
         {
@@ -104,9 +101,6 @@ public class DragDropCoin : MonoBehaviour
             if (draggedCoin.isDragable)
             {
                 up = true;
-                //dropY = dragY;
-
-                //Vector3 pos = new Vector3(coin.transform.position.x, dropY, coin.transform.position.z);
                 //the mathf.Round makes the coin snap to increments of 1 in the X and Z directions.
                 Vector3 boardPos = new Vector3(Mathf.Round(draggedCoin.transform.position.x), dragY, Mathf.Round(draggedCoin.transform.position.z));
                 dropY = board.GetTopCoinHeight(boardPos.x, boardPos.z);
@@ -115,9 +109,7 @@ public class DragDropCoin : MonoBehaviour
 
                 if (boardCoinTopColor.Equals(draggedCoin.BotColor))
                 {
-                    //draggedCoin.transform.position = pos;
                     CoinPlaced(dropPos);
-
                 }
                 else
                 {
@@ -130,21 +122,13 @@ public class DragDropCoin : MonoBehaviour
             if (draggedBridge.isDragable)
             {
                 up = true;
-
                 //the mathf.Round makes the coin snap to increments of 1 in the X and Z directions.
                 CheckBridgePlacement();
-
-                //Vector3 boardPos = new Vector3(Mathf.Round(draggedBridge.transform.position.x), dragY, Mathf.Round(draggedBridge.transform.position.z));
-                //dropY = board.GetTopCoinHeight(boardPos.x, boardPos.z);
-                //boardCoinTopColor = board.GetTopCoinTopColor(boardPos.x, boardPos.z);
                 Vector3 dropPos = GetBridgePosition();
-                //draggedBridge.bridgeCoins[0].BotColor;
+
                 if (CheckBridgePlacement())
                 {
-                    //draggedCoin.transform.position = pos;
-                    //CoinPlaced(dropPos); 
-                    BridgePlaced(dropPos); // to be done next!!
-
+                    BridgePlaced(dropPos);
                 }
                 else
                 {
@@ -156,9 +140,6 @@ public class DragDropCoin : MonoBehaviour
     }
     Vector3 GetBridgePosition()
     {
-        //check horizontal/vertical from bridgeclass (not implemented)
-        //if horizontal etc....
-
         Vector3 boardPos1 = new Vector3(Mathf.Round(draggedBridge.getCoin1Position().x), dragY, Mathf.Round(draggedBridge.getCoin1Position().z));
         dropY1 = board.GetTopCoinHeight(boardPos1.x, boardPos1.z);
         boardPos1 = new Vector3(Mathf.Round(draggedBridge.getCoin1Position().x), dropY1 + bridgeHeight, Mathf.Round(draggedBridge.getCoin1Position().z));
@@ -169,18 +150,19 @@ public class DragDropCoin : MonoBehaviour
         {
             boardPos1 = boardPos1 + new Vector3(-0.5f, 0, 0);
         }
-        //boardPos1 = boardPos1 + new Vector3(-0.5f, 0, 0);
+        
         return boardPos1;
     }
     bool CheckBridgePlacement()
     {
-        //Vector3 draggedCoin1 = draggedBridge.getCoin1Position();
         Vector3 boardPos1 = new Vector3(Mathf.Round(draggedBridge.getCoin1Position().x), dragY, Mathf.Round(draggedBridge.getCoin1Position().z));
         Vector3 boardPos2 = new Vector3(Mathf.Round(draggedBridge.getCoin2Position().x), dragY, Mathf.Round(draggedBridge.getCoin2Position().z));
-        dropY1 = board.GetTopCoinHeight(boardPos1.x, boardPos1.z);
-        dropY2 = board.GetTopCoinHeight(boardPos2.x, boardPos2.z);
+        
+        dropY1 = Mathf.Round(board.GetTopCoinHeight(boardPos1.x, boardPos1.z)*100)/100; //round to two decimals to make sure no Y position is messed up.
+        dropY2 = Mathf.Round(board.GetTopCoinHeight(boardPos2.x, boardPos2.z)*100)/100;
         boardCoinTopColor1 = board.GetTopCoinTopColor(boardPos1.x, boardPos1.z);
         boardCoinTopColor2 = board.GetTopCoinTopColor(boardPos2.x, boardPos2.z);
+        
         if (boardCoinTopColor1.Equals(draggedBridge.bridgeCoins[0].BotColor) && boardCoinTopColor2.Equals(draggedBridge.bridgeCoins[1].BotColor) && dropY1 == dropY2)
         {
             return true;
